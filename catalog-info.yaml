@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: "openapi"
+  title: "openapi"
+  description: "openapi"
+  annotations:
+    backstage.io/spectral-ruleset-url: https://raw.githubusercontent.com/contract-first/spectral-rules/main/ruleset.yaml
+  links:
+    - url: https://registry-apicurio-registry.apps.cluster-xvdzv.dynamic.redhatworkshops.io/ui/artifacts/com.redhat.demo.contractfirst/openapi/versions/latest
+      title: Apicurio Registry
+      icon: web
+    - url: https://microcks-microcks.apps.cluster-xvdzv.dynamic.redhatworkshops.io/#/services?name=openapi
+      title: Microcks
+    - url: https://microcks-microcks.apps.cluster-xvdzv.dynamic.redhatworkshops.io/rest/openapi/v1
+      title: Mock
+      icon: web
+spec:
+  type: openapi
+  system: system:default/contract-first
+  owner: group:default/backstage-admins
+  lifecycle: production
+  definition:
+    $openapi: https://github.com/rrbanda/contract-first-openapi-api/blob/main/specification.yaml
